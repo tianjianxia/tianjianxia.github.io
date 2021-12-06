@@ -5,5 +5,5 @@
 - add comment (utterances/gitalk)
 - change top-right corner (github-corner)
 - add license
-- config rss (feed burner)
+- config rss ([Link](http://fetchrss.com/))
 - add tag ([Link](https://longqian.me/2017/02/09/github-jekyll-tag/))
