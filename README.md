@@ -7,3 +7,4 @@
 - add license
 - config rss ([Link](http://fetchrss.com/))
 - add tag ([Link](https://longqian.me/2017/02/09/github-jekyll-tag/))
+- add google analytics ([Link](https://support.google.com/analytics/answer/1008015?hl=en))
