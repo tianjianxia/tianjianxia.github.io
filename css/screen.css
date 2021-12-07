@@ -228,7 +228,7 @@ ul.posts {
   background-color: #555;
 }
 
-.content {
+.collapse-content {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
