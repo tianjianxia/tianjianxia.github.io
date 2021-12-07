@@ -97,17 +97,11 @@ ul.posts {
     text-decoration: none;
   }
 
-  .site .title a:hover {
-    color: black;
-  }
-
-  .site .title a.extra {
+  .site .title .collapsible {
     color: #aaa;
-    text-decoration: none;
-    margin-left: 1em;
   }
 
-  .site .title a.extra:hover {
+  .site .title a:hover {
     color: black;
   }
 
@@ -224,14 +218,14 @@ ul.posts {
   color: black;
 }
 
-.active, .collapsible:hover {
+.actives {
   background-color: #555;
 }
 
 .collapse-content {
-  padding: 0 18px;
+  padding: 5px 18px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+  color: black;
 }
