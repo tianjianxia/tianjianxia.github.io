@@ -68,11 +68,9 @@ pageTracker._trackPageview();
 <!-- Google Analytics end -->
 
 <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
+var coll = document.getElementByClassName("collapsible");
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
+  coll.addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
@@ -80,8 +78,8 @@ for (i = 0; i < coll.length; i++) {
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
     } 
-  });
-}
+  })
+
 </script>
 
 </body>
