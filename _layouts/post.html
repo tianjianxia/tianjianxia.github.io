@@ -17,8 +17,12 @@ layout: default
 <!---
   End of generatation
 -->
-{{ tags }}
 
+<div class="post-header">
+  <h2 class="post-title">{{ page.title }}</h2>
+  <span class="post-date">Date: {{ page.date | date_to_long_string: "ordinal", "US" }}</span> &nbsp;
+  <span class="post-tags">Tags: {{ tags }}</span>
+</div> 
 
 <div id="post">
 {{ content }}
