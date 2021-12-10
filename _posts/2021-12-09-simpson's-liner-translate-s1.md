@@ -10,7 +10,7 @@ In order to improve my verbal skills and oral English, I decide to start transla
 ***
 
 1.EP1
-- 0:00 - 2:49
+- 0:00 - 2:49 (2021-12-09)
 
 Marge : "Oh, careful! Oh!"
 
@@ -44,7 +44,7 @@ Principal : "The forth grade will now favor us(给我们带来) -- Melody ehh.. 
 Marge : "Isn't Bart sweet, Homer? He sings like an angel!"
 
 
-Bart : "Oh! Jingle bell Batman smells, Robin laid an egg, the Batmobile broke its wheel. The joker gotta ...Ahh!"
+Bart : "Oh! Jingle bell Batman smells, Robin laid an egg, the Batmobile broke its wheel. The joker gotta ...Ahh!(太搞了)"
 
 
 Principal : "The fifth grade will now favour us with a scene from Charles Dickens - a Christmas Carol'"
