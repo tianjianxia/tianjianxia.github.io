@@ -21,8 +21,10 @@ title: Tianjian Xia
   var content = coll.nextElementSibling;
   if (content.style.maxHeight){
     content.style.maxHeight = null;
+    coll.innerHTML = "about me &#9660;"
   } else {
     content.style.maxHeight = content.scrollHeight + "px";
+    coll.innerHTML = "about me &#9650;"
   } 
 </script>
 <!-- End of trigger -->
