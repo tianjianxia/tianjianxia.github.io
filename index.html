@@ -15,11 +15,14 @@ title: Tianjian Xia
 
 <!-- Automatic button trigger -->
 <script>
-  var colls = document.querySelectorAll('.collapsible'); 
+  var coll = document.querySelectorAll('.collapsible')[0]; 
 
-  var i;
-  for (i = 0; i < colls.length; ++i) {
-    colls[i].click();
-  };
+  this.classList.toggle("active");
+  var content = coll.nextElementSibling;
+  if (content.style.maxHeight){
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  } 
 </script>
 <!-- End of trigger -->
