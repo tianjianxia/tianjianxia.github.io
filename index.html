@@ -15,7 +15,11 @@ title: Tianjian Xia
 
 <!-- Automatic button trigger -->
 <script>
-  var aboutBtn = document.getElementsByClassName("collapsible");
-  aboutBtn.click();
+  var colls = document.querySelectorAll('.collapsible'); 
+
+  var i;
+  for (i = 0; i < colls.length; ++i) {
+    colls[i].click();
+  };
 </script>
 <!-- End of trigger -->
