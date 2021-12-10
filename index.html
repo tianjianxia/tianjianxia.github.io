@@ -17,7 +17,7 @@ title: Tianjian Xia
 <script>
   var coll = document.querySelectorAll('.collapsible')[0]; 
 
-  this.classList.toggle("active");
+  coll.classList.toggle("active");
   var content = coll.nextElementSibling;
   if (content.style.maxHeight){
     content.style.maxHeight = null;
