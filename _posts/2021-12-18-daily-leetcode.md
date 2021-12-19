@@ -4,15 +4,22 @@ title: Leetcode daily
 tags: [leetcode]
 ---
 
+<br/>
+
 Long separating from Leetcode and algorithm leads my failure on my recent online assesment, SHAME ON ME. Thus I would like to restart my daily leetcode training and the Saturday contest. The rule I obey will present below.
 
 - Record every daily challenge
 - Follow algorithm category on [Zhihu](https://zhuanlan.zhihu.com/p/349940945), one category once a time period. Recorded at [My google sheet](https://docs.google.com/spreadsheets/d/1JoyLqikGBHg1AVwxTBICTxjAal9bVbj03D9Ek7VKc58/edit#gid=0)
 - Record every Saturday contest
 
+<br/>
+
 ***
 
 ## Index
+
+<br/>
+
 #### Daily Challenge
 [20211219](#12-19-2021)
 
@@ -23,6 +30,8 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 <br/>
 
 #### Weekly Contest
+
+<br/>
 
 <br/>
 
