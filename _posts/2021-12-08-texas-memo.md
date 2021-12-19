@@ -4,6 +4,20 @@ title: 德州风云记 - Old Memory in Texas
 tags: [wechat account, hop]
 ---
 
+<!---
+    How to add image
+
+    ![title](/images/postName/image.*)
+-->
+
+<!---
+    How to add video
+
+    <video width="320" height="240" controls autoplay>
+        <source src="/videos/postName/video.*" type="video/mp4">
+    </video>
+-->
+
 这是我在18年7月写的随笔。适时德州三强的境遇各不相同，时至21年年末再观三队，火箭已是最年轻的球队之一，小牛的灵魂卡莱尔也因为对波尔津吉斯的改造失败远走印第安纳，只有马刺还深陷后邓肯时代的泥沼。再看这篇文章不禁感慨。遂重发。
 
 ***
