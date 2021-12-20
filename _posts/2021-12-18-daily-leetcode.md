@@ -23,8 +23,8 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 <br/>
 
 #### Daily Challenge
-[20211219](#12-19-2021)
-[20211220](#12-20-2021)
+- [20211219](#12-19-2021)
+- [20211220](#12-20-2021)
 
 <br/>
 
