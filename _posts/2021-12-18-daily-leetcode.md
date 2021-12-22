@@ -35,9 +35,9 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 <br/>
 
 ##### Backtracking
-- [Restore-IP-Address](#Restore-IP-Address)
-- [Generate-Parentheses](#Generate-Parentheses)
-- [Remove-Invalid-Parentheses](#Remove-Invalid-Parentheses)
+- [Restore-IP-Address](#restore-ip-address)
+- [Generate-Parentheses](#generate-parentheses)
+- [Remove-Invalid-Parentheses](#remove-invalid-parentheses)
 
 <br/>
 
