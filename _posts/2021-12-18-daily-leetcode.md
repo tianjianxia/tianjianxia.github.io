@@ -27,6 +27,7 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [20211220](#12-20-2021)
 - [20211221](#12-21-2021)
 - [20211222](#12-22-2021)
+- [20211223](#12-23-2021)
 
 <br/>
 
@@ -38,6 +39,7 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [Restore-IP-Address](#restore-ip-address)
 - [Generate-Parentheses](#generate-parentheses)
 - [Remove-Invalid-Parentheses](#remove-invalid-parentheses)
+- [Brace-Expansion](#brace-expansion)
 
 <br/>
 
@@ -558,3 +560,92 @@ Leetcode 301
 
 <br/>
 
+### Brace Expansion
+Leetcode 1087
+```java
+    public String[] expand(String s) {
+        
+        List<List<String>> list = new ArrayList<>();
+        
+        String[] removeLeftBracket = s.split("\\{");
+        for (String leftRemoved : removeLeftBracket) {
+            if (leftRemoved.length() > 0) {
+                String[] removeRightBracket = leftRemoved.split("\\}");
+                for (String rightRemoved : removeRightBracket) {
+                    if (rightRemoved.length() > 0) {
+                        String[] chars = rightRemoved.split(",");
+                        List<String> subList = new ArrayList<>();
+                        for (String ch : chars) {
+                            subList.add(ch);
+                        }
+                        Collections.sort(subList);
+                        list.add(subList);
+                    }
+                }
+            }
+        }
+        
+        List<String> ansList = new ArrayList<>();
+        
+        dfs(new StringBuilder(), 0, list, ansList);
+        
+        String[] ans = new String[ansList.size()];
+        
+        for (int i = 0; i < ans.length; i++) {
+            ans[i] = ansList.get(i);
+        }
+        
+        return ans;
+    }
+    
+    private void dfs(StringBuilder sb, int idx, List<List<String>> list, List<String> ansList) {
+        if (idx == list.size()) {
+            ansList.add(sb.toString());
+            return;
+        }
+        
+        List<String> curSubList = list.get(idx);
+        for (int i = 0; i < curSubList.size(); i++) {
+            sb.append(curSubList.get(i));
+            dfs(sb, idx + 1, list, ansList);
+            sb.setLength(sb.length() - 1);
+        }
+        
+        return;
+    }
+```
+
+<br/>
+
+### 12 23 2021
+Leetcode 210 Course Schedule II
+```java
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        Map<Integer, List<Integer>> order = new HashMap<>();
+        for(int[] prereq : prerequisites)
+            order.computeIfAbsent(prereq[0], v -> new ArrayList<>()).add(prereq[1]);
+
+        List<Integer> sequence = new ArrayList<>();
+        boolean[] visited = new boolean[numCourses];
+        for(int i=0;i<numCourses;i++) {
+            if (!createSequence(i, order, sequence, new HashSet<>(), visited)) return new int[0];
+        }
+        return sequence.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    private boolean createSequence(int i, Map<Integer, List<Integer>> order, List<Integer> sequence, Set<Integer> cycleCheck, boolean[] visited) {
+        if (visited[i]) return true;
+        visited[i]=true;
+
+        cycleCheck.add(i);
+
+        for(int dependent :  order.getOrDefault(i, Collections.emptyList())) {
+            if (cycleCheck.contains(dependent)) return false;
+            if (!createSequence(dependent, order, sequence, cycleCheck, visited)) return false;
+        }
+
+        sequence.add(i);
+        cycleCheck.remove(i);
+        return true;
+    }
+```
