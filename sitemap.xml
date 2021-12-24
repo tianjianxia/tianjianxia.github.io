@@ -8,7 +8,7 @@
     </url>
     {% for post in site.posts %}
         <url>
-            <loc>http://tianjianxia.github.io{{ post.url }}</loc>
+            <loc>https://tianjianxia.github.io{{ post.url }}</loc>
         </url>
     {% endfor %}
 </urlset> 
