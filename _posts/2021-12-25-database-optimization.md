@@ -15,6 +15,8 @@ The article is mainly about database indexing concept, database caching, read-wr
 
 ***
 
+<br/>
+
 #### Problem we are facing
 
 Imagining you have a table with more than 1 billion rows, and in most of scenarios the requirement need to query almost half of the data from table. You try to batch your SQL query statement, and you add index to the datatable. But, still, the query process takes a lot of time, and the database server I/O resource is fully occupied.
@@ -23,22 +25,22 @@ How would you do with this?
 
 <br/>
 
-1. Add index to the table
+- Add index to the table
 
 <br/>
 
-2. Add a cache service for the database
+- Add a cache service for the database
 
 <br/>
 
-3. Split the table into a read table and a write one
+- Split the table into a read table and a write one
 
 <br/>
 
-4. Partition the table horizontally or vertically
+- Partition the table horizontally or vertically
 
 <br/>
 
-5. Implement a database connection pool
+- Implement a database connection pool
 
 <br/>
