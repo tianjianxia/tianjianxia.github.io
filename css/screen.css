@@ -290,3 +290,8 @@ ul.posts {
   width: 400px;
   text-align: center;
 }
+
+#email-addr {
+  color: #a00;
+  text-decoration: none;
+}
