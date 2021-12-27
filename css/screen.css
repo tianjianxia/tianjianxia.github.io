@@ -196,6 +196,7 @@ ul.posts {
   .post-header .post-title {
     font-size: 28px;
     margin-bottom: 5px;
+    line-height: 32px;
   }
 
   .post-header .post-date {
