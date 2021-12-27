@@ -29,6 +29,12 @@ How would you do with this?
 
 <br/>
 
+If you are a software engineer working on server end, even you are not very professional in relational database, you will know something about table indexing. Every programmer knows how to create a table will know how to create a index for the table. But not exact everyone knows why index will help the table querys faster and in what situation should we add index to a table.
+
+Most of popular relational database use data structures like B+ tree or red black tree to implement database indexing. A balanced tree structure like red black tree has some advantages like everytime you access a individual node of the tree, the expected average searching time will be similiar. This stands that the structure helps the data querys "divide and conquer" the entries. A SQL WHERE statement will go either left or right when it excutes on a tree node entry(Some structure like B+ tree will be different because it has multiple children). The tree struct help you query in a even time, but it pay a price. When you try to delete or update a node value, it will trigger the tree structure to alter itself to meet the query requrement(value balanced). The insert, update and delete process in an indexed table is more exhausting than a normal one. More detailed informations about database indexing and balanced tree algorithms, please see [this](www.google.com).
+
+<br/>
+
 - Add a cache service for the database
 
 <br/>
