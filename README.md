@@ -1,4 +1,4 @@
-# tianjianxia.github.io
+# tj-xia.com
 
 - This is Tianjian Xia. This site is used to post my blogs about coding and sports stuff.
 
