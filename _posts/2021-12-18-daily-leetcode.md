@@ -31,6 +31,7 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [20211224](#12-24-2021)
 - [20211225](#12-25-2021)
 - [20211226](#12-26-2021)
+- [20211227](#12-27-2021)
 
 <br/>
 
@@ -985,4 +986,19 @@ Intervals Between Identical Elements
 Recover the Original Array
 ```java
     // Traverse all possible K
+```
+
+<br/>
+
+### 12 27 2021
+Leetcode 476 Number Complement
+```java
+    public int findComplement(int num) {
+        // n is a length of num in binary representation
+        int n = (int)( Math.log(num) / Math.log(2) ) + 1;
+        // bitmask has the same length as num and contains only ones 1...1
+        int bitmask = (1 << n) - 1;
+        // flip all bits
+        return bitmask ^ num;
+    }
 ```
