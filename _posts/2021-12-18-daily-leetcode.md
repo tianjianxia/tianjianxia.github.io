@@ -982,11 +982,120 @@ Execution of All Suffix Instructions Staying in a Grid
 Intervals Between Identical Elements
 ```java
     // Prefix Sum
+    public long[] getDistances(int[] arr) {
+        int n = arr.length;
+        long[] ans = new long[n];
+        
+        Map<Integer, List<Long>> prefix = new HashMap<>();
+        Map<Integer, List<Long>> suffix = new HashMap<>();
+        
+        for (int i = 0; i < n; i++) {
+            int num = arr[i];
+            
+            if (!prefix.containsKey(num)) {
+                prefix.put(num, new ArrayList<>());
+            } 
+            
+            List<Long> list = prefix.get(num);
+            int size = list.size();
+            long sum = i + (size == 0 ? 0 : list.get(size - 1));
+            prefix.get(num).add(sum);
+            ans[i] += i * size - sum;
+        }
+        
+        for (int i = n - 1; i >= 0; i--) {
+            int num = arr[i];
+
+            if (!suffix.containsKey(num)) {
+                suffix.put(num, new ArrayList<>());
+            } 
+
+            List<Long> list = suffix.get(num);
+            int size = list.size();
+            long sum = i + (size == 0 ? 0 : list.get(size - 1));
+            suffix.get(num).add(sum);
+            ans[i] += sum - i * size;
+        }
+        
+        return ans;
+    }
 ```
 
 Recover the Original Array
 ```java
     // Traverse all possible K
+    private int[] ans;
+    private boolean isFind;
+    
+    public int[] recoverArray(int[] nums) {
+        int n = nums.length;
+        int len = n / 2;
+        
+        isFind = false;
+        
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        
+        
+        for (int i = 0; i < n; i++) {
+            max = Math.max(nums[i], max);
+            min = Math.min(nums[i], min);
+        }
+        
+        int[] map = new int[max + 1];
+        for (int i = 0; i < n; i++) {
+            map[nums[i]]++;
+        }
+        
+        for (int k = 0; k <= (max - min) / 2; k++) {
+            for (int i = min; i <= max; i++) {
+                int[] curAns = new int[len];
+                dfs(map, k, i, max, 0, curAns);    
+                if (isFind) {
+                    return ans;
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    private void dfs(int[] map, int k, int curNum, int max, int curIdx, int[] curAns) {
+        if (isFind) {
+            return;
+        }
+        
+        if (curIdx == curAns.length) {
+            ans = new int[curAns.length];
+            for (int i = 0; i < ans.length; i++) {
+                ans[i] = curAns[i];
+            }
+            
+            return;
+        }
+        
+        int small = curNum - k;
+        int large = curNum + k;
+        if (small < 0 || large >= map.length) {
+            return;
+        }
+        
+        if (map[small] == 0 || map[large] == 0) {
+            return;
+        }
+        
+        map[small]--;
+        map[large]--;
+        curAns[curIdx] = curNum;
+        for (int i = curNum; i <= max; i++) {
+            dfs(map, k, i, max, curIdx + 1, curAns);
+        }
+        curAns[curIdx] = 0;
+        map[small]++;
+        map[large]++;
+        
+        return;
+    }
 ```
 
 <br/>
