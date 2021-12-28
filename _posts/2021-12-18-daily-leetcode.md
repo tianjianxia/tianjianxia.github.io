@@ -32,6 +32,7 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [20211225](#12-25-2021)
 - [20211226](#12-26-2021)
 - [20211227](#12-27-2021)
+- [20211228](#12-28-2021)
 
 <br/>
 
@@ -1000,5 +1001,29 @@ Leetcode 476 Number Complement
         int bitmask = (1 << n) - 1;
         // flip all bits
         return bitmask ^ num;
+    }
+```
+
+<br/>
+
+### 12 28 2021
+```java
+    public ListNode middleNode(ListNode head) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        if (fast != null) {
+            slow = slow.next;
+        } 
+        
+        return slow;
     }
 ```
