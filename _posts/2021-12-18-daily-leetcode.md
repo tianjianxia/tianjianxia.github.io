@@ -33,6 +33,7 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [20211226](#12-26-2021)
 - [20211227](#12-27-2021)
 - [20211228](#12-28-2021)
+- [20211229](#12-29-2021)
 
 <br/>
 
@@ -48,6 +49,10 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [Time-Needed-To-Inform-All-Employees](#time-needed-to-inform-all-employees)
 - [Number-Of-Distinct-Islands](#number-of-distinct-islands)
 - [Palindrome-Partitioning](#palindrome-partitioning)
+- [Letter-Combinations-of-a-Phone-Number](#letter-combinations-of-a-phone-number)
+- [Combination-Sum-I](#combination-sum-i)
+- [Combination-Sum-II](#combination-sum-ii)
+- [Combination-Sum-III](#combination-sum-iii)
 
 <br/>
 
@@ -1219,3 +1224,161 @@ Leetcode 116 Populating Next Right Pointers in Each Node
         return root;
     }
 ```
+
+<br/>
+
+### Letter Combinations of a Phone Number
+Leetcode 17
+```java
+    public List<String> letterCombinations(String digits) {
+        Map<Character, char[]> map = new HashMap<>();
+        
+        map.put('2', new char[] {'a', 'b', 'c'});
+        map.put('3', new char[] {'d', 'e', 'f'});
+        map.put('4', new char[] {'g', 'h', 'i'});
+        map.put('5', new char[] {'j', 'k', 'l'});
+        map.put('6', new char[] {'m', 'n', 'o'});
+        map.put('7', new char[] {'p', 'q', 'r', 's'});
+        map.put('8', new char[] {'t', 'u', 'v'});
+        map.put('9', new char[] {'w', 'x', 'y', 'z'});
+        
+        List<String> ans = new ArrayList<>();
+        dfs(digits, 0, map, new StringBuilder(), ans);
+        
+        return ans;
+    }
+    
+    private void dfs(String s, int idx, Map<Character, char[]> map, StringBuilder sb, List<String> ans) {
+        if (idx == s.length()) {
+            if (sb.length() > 0) {
+                ans.add(sb.toString());
+            }
+            return;
+        }
+        
+        char curNum = s.charAt(idx);
+        char[] curArr = map.get(curNum);
+        for (int i = 0; i < curArr.length; i++) {
+            sb.append(curArr[i]);
+            dfs(s, idx + 1, map, sb, ans);
+            sb.setLength(sb.length() - 1);
+        } 
+        
+        return;
+    }
+```
+
+<br/>
+
+### Combination Sum I
+Leetcode 39
+```java
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if(candidates == null || candidates.length == 0){
+            return ans;
+        }
+    
+        Arrays.sort(candidates);
+        helper(ans, new ArrayList<>(), 0, candidates, target, 0);
+        return ans;
+    }
+
+    public void helper(List<List<Integer>> ans, List<Integer> current, int sum, int[] candidates, int target, int pos){
+        if(sum == target){
+            ans.add(new ArrayList<>(current));
+            return;
+        }
+    
+        for(int i=pos; i<candidates.length; i++){
+            if(sum + candidates[i] > target) {
+                break;
+            }
+            current.add(candidates[i]);
+            helper(ans, current, sum + candidates[i], candidates, target, i);
+            current.remove(current.size() - 1);
+        }
+        return;
+    }
+```
+
+<br/>
+
+### Combination Sum II
+Leetcode 40
+```java
+     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates);
+        
+        List<List<Integer>> ans = new ArrayList<>();
+        
+        dfs(candidates, 0, 0, target, new ArrayList<>(), ans);
+        
+        return ans;
+    }
+    
+    private void dfs(int[] candidates, int idx, int sum, int target, List<Integer> list, List<List<Integer>> ans) {
+        if (sum > target) {
+            return;
+        }
+        
+        if (sum == target) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        
+        int curIdx = idx;
+        while (curIdx < candidates.length) {
+            sum += candidates[curIdx];
+            list.add(candidates[curIdx]);
+            
+            dfs(candidates, curIdx + 1, sum, target, list, ans);
+            list.remove(list.size() - 1);
+            sum -= candidates[curIdx];
+            int tmpIdx = curIdx;
+            while (tmpIdx < candidates.length && candidates[tmpIdx] == candidates[curIdx]) {
+                tmpIdx++;
+            }
+            curIdx = tmpIdx;
+        }
+        
+        return;
+    }
+```
+
+<br/>
+
+### Combination Sum III
+Leetcode 216
+```java
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> ans = new ArrayList<>();
+        
+        dfs(1, n, k, 0, new ArrayList<>(), ans);
+        
+        return ans;
+    }
+    
+    private void dfs(int start, int target, int limit, int sum, List<Integer> list, List<List<Integer>> ans) {
+        if (sum == target && list.size() == limit) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        
+        if (sum > target) {
+            return;
+        }
+        
+        for (int i = start; i <= 9; i++) {
+            sum += i;
+            list.add(i);
+            dfs(i + 1, target, limit, sum, list, ans);
+            list.remove(list.size() - 1);
+            sum -= i;
+        }
+        
+        return;
+    }
+```
+
+<br/>
