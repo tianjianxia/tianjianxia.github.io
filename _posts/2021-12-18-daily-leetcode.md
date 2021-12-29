@@ -1116,6 +1116,7 @@ Leetcode 476 Number Complement
 <br/>
 
 ### 12 28 2021
+Leetcode 876 Middle of the Linked List
 ```java
     public ListNode middleNode(ListNode head) {
         ListNode dummy = new ListNode();
@@ -1134,5 +1135,87 @@ Leetcode 476 Number Complement
         } 
         
         return slow;
+    }
+```
+
+<br/>
+
+### 12 29 2021
+Leetcode 116 Populating Next Right Pointers in Each Node
+```java
+    // BFS
+    public Node connect(Node root) {
+        
+        if (root == null) {
+            return null;
+        }
+        
+        
+        Queue<Node> q = new LinkedList<>();
+        
+        q.offer(root);
+        
+        while (!q.isEmpty()) {
+            int size = q.size();
+            Node pre = null;
+            for (int i = 0; i < size; i++) {
+                Node cur = q.poll();
+                if (cur.left != null) {
+                    q.offer(cur.left);
+                }
+                
+                if (cur.right != null) {
+                    q.offer(cur.right);
+                }
+                
+                if (pre != null) {
+                    pre.next = cur;
+                }
+                
+                pre = cur;
+            }
+        }
+        
+        return root;
+    }
+
+    // Use next pointer
+    public Node connect(Node root) {
+        
+        if (root == null) {
+            return root;
+        }
+        
+        // Start with the root node. There are no next pointers
+        // that need to be set up on the first level
+        Node leftmost = root;
+        
+        // Once we reach the final level, we are done
+        while (leftmost.left != null) {
+            
+            // Iterate the "linked list" starting from the head
+            // node and using the next pointers, establish the 
+            // corresponding links for the next level
+            Node head = leftmost;
+            
+            while (head != null) {
+                
+                // CONNECTION 1
+                head.left.next = head.right;
+                
+                // CONNECTION 2
+                if (head.next != null) {
+                    head.right.next = head.next.left;
+                }
+                
+                // Progress along the list (nodes on the current level)
+                head = head.next;
+            }
+            
+            // Move onto the next level
+            leftmost = leftmost.left;
+        }
+        
+        return root;
     }
 ```
