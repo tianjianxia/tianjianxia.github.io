@@ -54,6 +54,12 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [Combination-Sum-I](#combination-sum-i)
 - [Combination-Sum-II](#combination-sum-ii)
 - [Combination-Sum-III](#combination-sum-iii)
+- [Subset-I](#subset-i)
+- [Subset-II](#subset-ii)
+- [Permutations-I](#permutations-i)
+- [Permutations-II](#permutations-ii)
+- [Combinations](#combinations)
+
 
 <br/>
 
@@ -1395,6 +1401,166 @@ Leetcode 1015 Smallest Integer Divisible by K
             if (r == 0) return N;
         }
         return -1;
+    }
+```
+
+<br/>
+
+### Subset I
+Leetcode 78
+```java
+    public List<List<Integer>> subsets(int[] nums) {
+        
+        List<List<Integer>> ans = new ArrayList<>();
+        
+        dfs(nums, 0, new ArrayList<>(), ans);
+        
+        return ans;
+    }
+    
+    private void dfs(int[] nums, int idx, List<Integer> list, List<List<Integer>> ans) {
+        ans.add(new ArrayList<>(list));
+        
+        for (int i = idx; i < nums.length; i++) {
+            list.add(nums[i]);
+            dfs(nums, i + 1, list, ans);
+            list.remove(list.size() - 1);
+        }
+        
+        return;
+    }
+```
+
+<br/>
+
+### Subset II
+Leetcode 90
+```java
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> ans = new ArrayList<>();
+
+        dfs(ans, new ArrayList<>(), nums, 0);
+        return ans;
+    }
+
+    private void dfs(List<List<Integer>> ans, List<Integer> list, int[] nums, int idx) {
+        ans.add(new ArrayList<>(list));
+
+        for (int i = idx; i < nums.length; i++) {
+            if (i != idx && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            list.add(nums[i]);
+            dfs(ans, list, nums, i + 1);
+            list.remove(list.size() - 1);
+        }
+    }
+```
+
+<br/>
+
+### Permutations I
+Leetcode 46
+```java
+    public List<List<Integer>> permute(int[] nums) {
+        int n = nums.length;
+        boolean[] visited = new boolean[n];
+        
+        List<List<Integer>> ans = new ArrayList<>();
+        dfs(nums, visited, n, new ArrayList<>(), ans);
+        
+        return ans;
+    }
+    
+    private void dfs(int[] nums, boolean[] visited, int n, List<Integer> list, List<List<Integer>> ans) {
+        if (n == 0) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (visited[i] == true) {
+                continue;
+            }
+            
+            visited[i] = true;
+            list.add(nums[i]);
+            dfs(nums, visited, n - 1, list, ans);
+            list.remove(list.size() - 1);
+            visited[i] = false;
+        }
+    }
+```
+
+<br/>
+
+### Permutations II
+Leetcode 47
+```java
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        Arrays.sort(nums);
+        
+        int n = nums.length;
+        boolean[] visited = new boolean[n];
+        
+        List<List<Integer>> ans = new ArrayList<>();
+        dfs(nums, visited, n, new ArrayList<>(), ans);
+        
+        return ans;
+    }
+    
+    private void dfs(int[] nums, boolean[] visited, int n, List<Integer> list, List<List<Integer>> ans) {
+        if (n == 0) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (visited[i] == true) {
+                continue;
+            }
+            
+            if (i != 0 && nums[i] == nums[i - 1] && visited[i - 1] == true) {
+                continue;
+            }
+            
+            visited[i] = true;
+            list.add(nums[i]);
+            dfs(nums, visited, n - 1, list, ans);
+            list.remove(list.size() - 1);
+            visited[i] = false;
+        }
+    }
+```
+
+<br/>
+
+### Combinations
+Leetcode 77
+```java
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> ans = new ArrayList<>();
+        
+        dfs(1, n, k, new ArrayList<>(), ans);
+        
+        return ans;
+    }
+    
+    private void dfs(int cur, int n, int k, List<Integer> list, List<List<Integer>> ans) {
+        if (list.size() == k) {
+            ans.add(new ArrayList<>(list));
+            
+            return;
+        }
+        
+        for (int i = cur; i <= n; i++) {
+            list.add(i);
+            dfs(i + 1, n, k, list, ans);
+            list.remove(list.size() - 1);
+        }
+        
+        return;
     }
 ```
 
