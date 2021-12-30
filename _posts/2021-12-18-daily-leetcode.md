@@ -1012,7 +1012,7 @@ Intervals Between Identical Elements
             int size = list.size();
             long sum = i + (size == 0 ? 0 : list.get(size - 1));
             prefix.get(num).add(sum);
-            ans[i] += i * size - sum;
+            ans[i] += (long)i * size - sum;
         }
         
         for (int i = n - 1; i >= 0; i--) {
@@ -1026,7 +1026,7 @@ Intervals Between Identical Elements
             int size = list.size();
             long sum = i + (size == 0 ? 0 : list.get(size - 1));
             suffix.get(num).add(sum);
-            ans[i] += sum - i * size;
+            ans[i] += sum - (long)i * size;
         }
         
         return ans;
