@@ -34,6 +34,7 @@ Long separating from Leetcode and algorithm leads my failure on my recent online
 - [20211227](#12-27-2021)
 - [20211228](#12-28-2021)
 - [20211229](#12-29-2021)
+- [20211230](#12-30-2021)
 
 <br/>
 
@@ -1378,6 +1379,22 @@ Leetcode 216
         }
         
         return;
+    }
+```
+
+<br/>
+
+### 2021 12 30
+Leetcode 1015 Smallest Integer Divisible by K
+```java
+    public int smallestRepunitDivByK(int K) {
+        if (K % 2 == 0 || K % 5 == 0) return -1;
+        int r = 0;
+        for (int N = 1; N <= K; ++N) {
+            r = (r * 10 + 1) % K;
+            if (r == 0) return N;
+        }
+        return -1;
     }
 ```
 
