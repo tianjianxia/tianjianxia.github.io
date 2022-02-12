@@ -41,7 +41,8 @@ This example illustrates the importance using OOD tricks in your project. The ar
   ```java
       // Wrong example
       public String voice(Animal animal){
-          // Everytime we add a type of animal into the system, we had to modify this method
+          // Everytime we add a type of animal into the system, 
+          // We had to modify this method
           // And add a line with judgement
           if(animal instanceOf Dog) return "bark";
           if(animal instanceOf Cat) return "meow";
@@ -95,15 +96,19 @@ This example illustrates the importance using OOD tricks in your project. The ar
       }
   
       void assertArea(Rectangle r){
-          // When pass a Square as parameter, we get an unexpected area 16
-          // So this Rectangle and Square inheritance is not valid
+          // When pass a Square as parameter, 
+          // We get an unexpected area 16
+          // So this Rectangle and Square inheritance 
+          // is not valid
           r.setWidth(5);
           r.setHeight(4);
           assert(r.area() == 20);
       }
   
       void increaseWidth(Rectangle r){
-          // When pass a Square as parameter, something horrible happens and cause a dead loop
+          // When pass a Square as parameter, 
+          // something horrible happens 
+          // and cause a dead loop
           while(r.width < r.height){
               r.setWidth(r.width + 1);
           }
@@ -135,7 +140,9 @@ This example illustrates the importance using OOD tricks in your project. The ar
       // Wrong example
       interface Book {
           void read();
-          void sell(); // The consumer(Readers) don't have any requirement to sell a book, since we need this sell book feature.
+          void sell(); 
+          // The consumer(Readers) don't have any requirement to sell a book, 
+          // since we need this sell book feature.
       }
   
       // Right example
@@ -156,8 +163,10 @@ This example illustrates the importance using OOD tricks in your project. The ar
   ```java
       // Wrong example
   
-      // What if we want the Button not only controll Lamp, but TV or Microwave?
-      // Of course we should not define an implemented instance in a higer level consumer
+      // What if we want the Button not only controll Lamp, 
+      // but TV or Microwave?
+      // Of course we should not define an implemented instance
+      // in a higer level consumer
       class Button {
           Lamp lamp;
           void push(){
