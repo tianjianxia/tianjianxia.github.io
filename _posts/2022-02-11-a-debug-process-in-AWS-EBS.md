@@ -16,11 +16,7 @@ Based on AWS documents, "web.service" is the linux service for Beanstalk which i
 
 First, a jar file of Spring Boot application is running from the starter class "AppCoreStarter" with annotation "@SpringBootApplication". Before this, the system should know which class is the starter class. I am using Maven as the package manager. In Maven, you can specify a Manifest starter class using property "configuration.archive.manifest.mainClass". 
 
-<br/>
-
 Or, when running jar file, we can use 'cp' command to specify a package to scan the main class. Like this: "java -jar -cp 'apiCore.MainClassStarter'". 
-
-<br/>
 
 But in AWS EC2(the actual instance of EBS), the service transfer jar file into a 'web.service' module. And directly run the jar file from that virutal environment. So, the instance do not know which starter class should it start with. 
 
