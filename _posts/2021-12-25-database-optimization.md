@@ -9,7 +9,7 @@ tags: [SQL Server, database optimization]
 
 This is a new topic about how to deal with a very large datatable. During my work in a fintech company, my team is facing some issues about several SQL Server table with large number of rows. Specific issue include large-scale query slow and database I/O resources tight. So I would like to start this topic, and analyse what cause the problem and how to opt them. I will introduce many scenarios in or out of my production context, and I will talk about how I solve my problem about the exact problem. 
 
-The article is mainly about database indexing concept, database caching, read-write splitting, database partitioning and databse connection pool.
+The article is mainly about database indexing concept, database caching, database partitioning and databse connection pool.
 
 <br/>
 
