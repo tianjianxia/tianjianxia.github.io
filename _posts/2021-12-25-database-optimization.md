@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to optimize a SQL table with massive data
+title: How to optimize performance of a SQL table with massive data
 tags: [SQL Server, database optimization]
 ---
 
