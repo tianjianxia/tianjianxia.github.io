@@ -10,4 +10,4 @@ tags: [Chill]
 
 - With my man
 
-<img src="/images/2021-04-21/img1.jpg" alt="I graduated!" />
+<img src="/images/2021-04-21/img2.jpg" alt="With my man" />
