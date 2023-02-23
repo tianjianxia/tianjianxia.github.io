@@ -14,6 +14,6 @@ tags: [Chill]
 
 <img src="/images/2022-02-26/img2.jpg" alt="A random sign" />
 
-- They do have a different skyline different from other major big cities.
+- They do have a skyline different from other major big cities.
 
 <img src="/images/2022-02-26/img3.jpg" alt="Somewhere in Queen Anne" />
