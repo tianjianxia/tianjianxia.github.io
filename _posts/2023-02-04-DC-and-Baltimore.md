@@ -42,8 +42,8 @@ tags: [Chill]
 
 - JHU
 
-<img src="/images/2022-09-16/img9.jpg" alt="jhu" />
+<img src="/images/2023-02-04/img9.jpg" alt="jhu" />
 
 - Bye!
 
-<img src="/images/2022-09-16/img10.jpg" alt="bye" />
+<img src="/images/2023-02-04/img10.jpg" alt="bye" />

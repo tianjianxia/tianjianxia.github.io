@@ -28,7 +28,7 @@ tags: [Chill]
 
 - Beat Ronnie2K's ass in an 1-on-1, is this my 2k career peak?
 
-<img src="/images/2023-02-18/img4.jpg" alt="charles" />
+<img src="/images/2023-02-18/img5.jpg" alt="ronnie2k" />
 
 - SLC
 
