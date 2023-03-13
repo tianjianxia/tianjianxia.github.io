@@ -4,7 +4,7 @@ title: Random Washington towns and ports
 tags: [Chill]
 ---
 
-- Olympid, Wahington State capital, lovely town, the building was beautiful. But the things inside the building is bullshit.
+- Olympia, Wahington State capital, lovely town, the building was beautiful. But the things inside the building is bullshit.
 
 <img src="/images/2023-03-12/img1.jpg" alt="capital" />
 
